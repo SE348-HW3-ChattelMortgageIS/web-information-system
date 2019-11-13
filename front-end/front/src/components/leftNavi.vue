@@ -1,6 +1,6 @@
 <template>
     <el-col :span="12">
-      <!--<h5>默认颜色</h5>-->
+      <h5>user name</h5>
       <el-menu
         default-active="2"
         class="el-menu-vertical-demo"
@@ -32,7 +32,7 @@
           <i class="el-icon-document"></i>
           <span slot="title">消息中心</span>
         </el-menu-item>
-        <el-menu-item index="4">
+        <el-menu-item index="4" @click="">
           <i class="el-icon-setting"></i>
           <span slot="title">个人设置</span>
         </el-menu-item>

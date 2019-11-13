@@ -10,7 +10,10 @@
 
     export default {
         name: "home",
-        components: {leftNavi}
+        components: {leftNavi},
+      methods:{
+
+      }
     }
 </script>
 
