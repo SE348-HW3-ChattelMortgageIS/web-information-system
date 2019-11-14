@@ -32,7 +32,7 @@
           <i class="el-icon-document"></i>
           <span slot="title">消息中心</span>
         </el-menu-item>
-        <el-menu-item index="4" @click="">
+        <el-menu-item index="4" @click="ToSetting()">
           <i class="el-icon-setting"></i>
           <span slot="title">个人设置</span>
         </el-menu-item>
@@ -49,6 +49,9 @@
           },
           handleClose(key, keyPath) {
             console.log(key, keyPath);
+          },
+          ToSetting() {
+            this.$router.push({path:'/setting'})
           }
         }
     }

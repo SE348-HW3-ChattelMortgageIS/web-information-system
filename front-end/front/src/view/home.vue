@@ -1,7 +1,9 @@
 <template>
 <div>
-  <left-navi></left-navi>
-  <!--<a>aaa</a>-->
+  <div>
+    <left-navi></left-navi>
+    <!--<a>aaa</a>-->
+  </div>
 </div>
 </template>
 
@@ -15,6 +17,7 @@
 
       }
     }
+    
 </script>
 
 <style scoped>

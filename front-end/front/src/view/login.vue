@@ -7,6 +7,8 @@
       <input type="password" placeholder="请输入密码" v-model="password">
       <button v-on:click="login()">登录</button>
       <span v-on:click="ToRegister()">没有账号？马上注册</span>
+      <br/>
+      <span @click="ret()">返回</span>
     </div>
     <div class="clear"></div>
     <div class="register-wrap" v-show="showRegister">
@@ -18,6 +20,8 @@
       <input type="password" placeholder="请验证密码" v-model="newPasswordD">
       <button v-on:click="register()">注册</button>
       <span v-on:click="ToLogin()">已有账号？马上登录</span>
+      <br/>
+      <span @click="ret()">返回</span>
     </div>
   </div>
 </template>
@@ -35,6 +39,9 @@
         ToLogin () {
           this.showRegister = false
           this.showLogin = true
+        },
+        ret() {
+          this.$router.push({ path: '/home'})
         }
       },
       data () {
