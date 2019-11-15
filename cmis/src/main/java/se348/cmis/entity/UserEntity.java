@@ -1,5 +1,6 @@
 package se348.cmis.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 
 @Entity
@@ -15,6 +16,7 @@ public class UserEntity {
   @Column(nullable = false, unique = true)
   private String phone;
 
+  @JsonIgnore
   @Column(nullable = false)
   private String password;
 

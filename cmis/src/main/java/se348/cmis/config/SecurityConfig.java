@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import se348.cmis.dto.LoginMessage;
+import se348.cmis.dto.GeneralMessage;
 
 @Configuration
 @EnableWebSecurity
@@ -33,8 +33,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .cors().and().csrf().disable()
         .authorizeRequests()
         .antMatchers("*").permitAll()
-        .antMatchers("/api/bank/**").hasAuthority("BANK")
-        .antMatchers("/api/customer/**").hasAuthority("CUSTOMER")
+        .antMatchers("/bank/**").hasAuthority("BANK")
+        .antMatchers("/customer/**").hasAuthority("CUSTOMER")
         .and()
         .formLogin()
         .loginPage("/without_log")
@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
           String username = authentication.getName();
           response.setContentType("application/json;charset=utf-8");
           PrintWriter out = response.getWriter();
-          LoginMessage loginMessage = new LoginMessage();
+          GeneralMessage loginMessage = new GeneralMessage();
           loginMessage.setState(200);
           loginMessage.setMessage(authentication.getAuthorities().toString());
           loginMessage.setSucceeded(true);
@@ -55,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
           /* Login failure */
           httpServletResponse.setContentType("application/json;charset=utf-8");
           PrintWriter out = httpServletResponse.getWriter();
-          LoginMessage loginMessage = new LoginMessage();
+          GeneralMessage loginMessage = new GeneralMessage();
           loginMessage.setState(401);
           loginMessage.setMessage(e.getMessage());
           loginMessage.setSucceeded(false);
@@ -72,7 +72,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
           response.setContentType("application/json;charset=utf-8");
           PrintWriter out = response.getWriter();
           request.getSession().invalidate();
-          LoginMessage loginMessage = new LoginMessage();
+          GeneralMessage loginMessage = new GeneralMessage();
           loginMessage.setState(200);
           loginMessage.setMessage("logout");
           loginMessage.setSucceeded(true);
