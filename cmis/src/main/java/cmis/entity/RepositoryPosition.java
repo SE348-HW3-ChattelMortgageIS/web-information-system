@@ -1,4 +1,4 @@
-package se348.cmis.entity;
+package cmis.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

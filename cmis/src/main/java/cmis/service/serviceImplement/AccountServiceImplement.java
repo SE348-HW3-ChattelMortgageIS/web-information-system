@@ -1,13 +1,13 @@
-package se348.cmis.service.serviceImplement;
+package cmis.service.serviceImplement;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import se348.cmis.dto.GeneralMessage;
-import se348.cmis.dto.RegisterRequest;
-import se348.cmis.entity.UserEntity;
-import se348.cmis.repository.UserEntityRepository;
-import se348.cmis.service.AccountService;
+import cmis.dto.GeneralMessage;
+import cmis.repository.UserEntityRepository;
+import cmis.dto.RegisterRequest;
+import cmis.entity.UserEntity;
+import cmis.service.AccountService;
 
 @Service
 public class AccountServiceImplement implements AccountService {

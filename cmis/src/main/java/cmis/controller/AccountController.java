@@ -1,4 +1,4 @@
-package se348.cmis.controller;
+package cmis.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import se348.cmis.dto.GeneralMessage;
-import se348.cmis.dto.RegisterRequest;
-import se348.cmis.service.AccountService;
+import cmis.dto.GeneralMessage;
+import cmis.dto.RegisterRequest;
+import cmis.service.AccountService;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping()
 @CrossOrigin("*")
 public class AccountController {
 

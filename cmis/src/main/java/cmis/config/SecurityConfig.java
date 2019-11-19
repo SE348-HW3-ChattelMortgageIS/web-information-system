@@ -1,4 +1,4 @@
-package se348.cmis.config;
+package cmis.config;
 
 import java.io.PrintWriter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import se348.cmis.dto.GeneralMessage;
+import cmis.dto.GeneralMessage;
 
 @Configuration
 @EnableWebSecurity
@@ -33,8 +33,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .cors().and().csrf().disable()
         .authorizeRequests()
         .antMatchers("*").permitAll()
-        .antMatchers("/bank/**").hasAuthority("BANK")
-        .antMatchers("/customer/**").hasAuthority("CUSTOMER")
+        .antMatchers("/api/**").hasAuthority("USER")
+        .antMatchers("/api/bank/**").hasAuthority("BANK")
+        .antMatchers("/api/customer/**").hasAuthority("CUSTOMER")
         .and()
         .formLogin()
         .loginPage("/without_log")
