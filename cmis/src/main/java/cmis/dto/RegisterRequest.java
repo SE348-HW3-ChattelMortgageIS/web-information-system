@@ -1,6 +1,6 @@
-package se348.cmis.dto;
+package cmis.dto;
 
-import se348.cmis.entity.UserEntity.UserType;
+import cmis.entity.UserEntity.UserType;
 
 public class RegisterRequest {
 

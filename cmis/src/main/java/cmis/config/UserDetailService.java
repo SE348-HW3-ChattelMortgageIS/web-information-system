@@ -1,4 +1,4 @@
-package se348.cmis.config;
+package cmis.config;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,9 +11,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import se348.cmis.entity.UserEntity;
-import se348.cmis.entity.UserEntity.UserType;
-import se348.cmis.repository.UserEntityRepository;
+import cmis.entity.UserEntity;
+import cmis.entity.UserEntity.UserType;
+import cmis.repository.UserEntityRepository;
 
 @Service
 public class UserDetailService implements UserDetailsService {
@@ -37,6 +37,7 @@ public class UserDetailService implements UserDetailsService {
 
     private Collection<GrantedAuthority> getGrantedAuthorities(UserEntity user) {
         Collection<GrantedAuthority> grantedAuthority = new ArrayList<>();
+        grantedAuthority.add(new SimpleGrantedAuthority("USER"));
         if (user.getType()== UserType.BANK) {
             grantedAuthority.add(new SimpleGrantedAuthority("BANK"));
         }
