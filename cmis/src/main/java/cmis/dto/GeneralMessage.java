@@ -1,4 +1,4 @@
-package se348.cmis.dto;
+package cmis.dto;
 
 public class GeneralMessage {
   private int state;

@@ -1,4 +1,4 @@
-package se348.cmis.entity;
+package cmis.entity;
 
 import java.math.BigDecimal;
 import javax.persistence.Column;

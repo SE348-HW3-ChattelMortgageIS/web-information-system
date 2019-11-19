@@ -1,4 +1,4 @@
-package se348.cmis.config;
+package cmis.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
