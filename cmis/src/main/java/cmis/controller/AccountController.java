@@ -12,7 +12,7 @@ import cmis.dto.RegisterRequest;
 import cmis.service.AccountService;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping()
 @CrossOrigin("*")
 public class AccountController {
 

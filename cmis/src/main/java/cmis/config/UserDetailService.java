@@ -37,6 +37,7 @@ public class UserDetailService implements UserDetailsService {
 
     private Collection<GrantedAuthority> getGrantedAuthorities(UserEntity user) {
         Collection<GrantedAuthority> grantedAuthority = new ArrayList<>();
+        grantedAuthority.add(new SimpleGrantedAuthority("USER"));
         if (user.getType()== UserType.BANK) {
             grantedAuthority.add(new SimpleGrantedAuthority("BANK"));
         }
