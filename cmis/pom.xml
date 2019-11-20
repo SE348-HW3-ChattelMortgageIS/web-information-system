@@ -84,9 +84,14 @@
       <artifactId>spring-data-mongodb</artifactId>
       <version>2.1.9.RELEASE</version>
     </dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.13</version>
+		</dependency>
 
 
-  </dependencies>
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -96,5 +101,15 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
+	<distributionManagement>
+		<repository>
+			<id>group1</id>
+			<name>cmis</name>
+			<url>https://maven.pkg.github.com/se348-hw3-chattelmortgageis/web-information-system</url>
+			<uniqueVersion>true</uniqueVersion>
+		</repository>
+	</distributionManagement>
 
 </project>
