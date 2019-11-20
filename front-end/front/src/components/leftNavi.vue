@@ -12,8 +12,8 @@
             <span>表格</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="1-1">钢卷</el-menu-item>
-            <el-menu-item index="1-2">入仓单</el-menu-item>
+            <el-menu-item index="1-1" @click="toSteel()">钢卷</el-menu-item>
+            <el-menu-item index="1-2" @click="toInstore()">入仓单</el-menu-item>
             <el-menu-item index="1-3">出仓单</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
@@ -52,6 +52,12 @@
           },
           ToSetting() {
             this.$router.push({path:'/setting'})
+          },
+          toSteel() {
+            this.$router.push({path:'/steel'})
+          },
+          toInstore() {
+            this.$router.push({path:'/instore'})
           }
         }
     }
