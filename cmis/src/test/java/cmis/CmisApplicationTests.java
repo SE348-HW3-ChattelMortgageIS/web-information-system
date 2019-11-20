@@ -1,6 +1,6 @@
 package cmis;
 
-import cmis.component.IOTAdapter;
+import cmis.service.getMessageService;
 import cmis.dto.GeneralMessage;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,11 +12,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class CmisApplicationTests {
 	@Autowired
-	IOTAdapter iotAdapter;
+	getMessageService getMessageService;
 
 	@Test
 	public void contextLoads() {
-		GeneralMessage res = iotAdapter.getSteelRollStatus(1);
+		GeneralMessage res = getMessageService.getStatus("1");
 		System.out.println(res.toString());
 		System.out.println(res.getEntity());
 	}
