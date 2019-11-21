@@ -1,5 +1,6 @@
 package cmis.service.serviceImplement;
 
+import cmis.dto.GeneralMessage;
 import cmis.entity.RepositoryPosition;
 import cmis.entity.SteelRoll;
 import cmis.entity.UserEntity;
@@ -27,13 +28,19 @@ public class SteelRollServiceImplement implements SteelRollService {
     public List<SteelRoll> queryAllSteelRoll(){
         return steelRollEntityRepository.findAll();
     }
-    public int delete(int id){
-        return steelRollEntityRepository.deleteSteelRoll(id);
+    public GeneralMessage delete(int id){
+        if(steelRollEntityRepository.deleteSteelRoll(id) != 0){
+            return new GeneralMessage(200, "delete", true, null);
+        }
+        return new GeneralMessage(500,"delete failed",false,null);
     }
-    public int verify(int id){
-        return steelRollEntityRepository.verifySteelRoll(id);
+    public GeneralMessage verify(int id){
+        if(steelRollEntityRepository.verifySteelRoll(id) != 0){
+            return new GeneralMessage(200,"verify",true,null);
+        }
+        return new GeneralMessage(500,"verify failed",false,null);
     }
-    public int create(BigDecimal price, String remark, User principal){
+    public GeneralMessage create(BigDecimal price, String remark, User principal){
         String username = principal.getUsername();
         UserEntity userEntity = userEntityRepository.findByUsername(username);
         RepositoryPosition repositoryPosition = repositoryPositionRepository.findByPositionId(1);
@@ -47,8 +54,8 @@ public class SteelRollServiceImplement implements SteelRollService {
         steelRoll.setSteelRollState(SteelRoll.SteelRollState.TO_BE_VERIFIED);
         try{steelRollEntityRepository.save(steelRoll);}
         catch(Exception e){
-            return 0;
+            return new GeneralMessage(500,e.getMessage(),false,null);
         }
-        return 1;
+        return new GeneralMessage(200,"create",true,null);
     }
 }

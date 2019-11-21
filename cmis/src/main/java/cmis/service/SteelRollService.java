@@ -1,6 +1,7 @@
 package cmis.service;
 
 
+import cmis.dto.GeneralMessage;
 import cmis.entity.SteelRoll;
 import org.springframework.security.core.userdetails.User;
 
@@ -11,7 +12,7 @@ import java.util.List;
 public interface SteelRollService {
 
     public List<SteelRoll> queryAllSteelRoll();
-    public int delete(int id);
-    public int verify(int id);
-    public int create(BigDecimal price, String remark, User principal);
+    public GeneralMessage delete(int id);
+    public GeneralMessage verify(int id);
+    public GeneralMessage create(BigDecimal price, String remark, User principal);
 }

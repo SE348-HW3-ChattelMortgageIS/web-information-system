@@ -36,29 +36,20 @@ public class SteelRollController {
     }
     @RequestMapping(value = "/deleteSteelRoll", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     @ResponseBody
-    String delteSteelRoll(int id) {
-        if(this.steelRollService.delete(id)!=0)
-            return "succeed";
-        else
-            return "failed";
+    GeneralMessage delteSteelRoll(int id) {
+        return steelRollService.delete(id);
     }
     @RequestMapping(value = "/verifySteelRoll", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     @ResponseBody
-    String verifySteelRoll(int id) {
-        if(this.steelRollService.verify(id)!=0)
-            return "succeed";
-        else
-            return "failed";
+    GeneralMessage verifySteelRoll(int id) {
+        return steelRollService.verify(id);
     }
     @RequestMapping(value = "/createSteelRoll", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     @ResponseBody
-    String createSteelRoll(@RequestBody CreateSteelRollRequest createSteelRollRequest) {
+    GeneralMessage createSteelRoll(@RequestBody CreateSteelRollRequest createSteelRollRequest) {
         User principal = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         BigDecimal price = createSteelRollRequest.getPrice();
         String remark = createSteelRollRequest.getRemark();
-        if(this.steelRollService.create(price,remark,principal)!=0)
-            return "succeed";
-        else
-            return "failed";
+        return this.steelRollService.create(price,remark,principal);
     }
 }
