@@ -42,6 +42,100 @@
         },
         ret() {
           this.$router.push({ path: '/home'})
+        },
+        register () {
+          let that = this
+          var url='http://101.132.73.215:8080/register'
+          if (this.newUsername === '' || this.newPassword === '') {
+            alert('请输入用户名或密码')
+          } else if (this.newPassword !== this.newPasswordD) {
+            alert('请输入相同密码')
+          }
+          this.$http({method: 'post',
+            url:url,
+            dataType: 'application/x-www-form-urlencoded',
+            headers:{
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            params: {'username': that.newUsername,
+              'password': that.newPassword
+            }
+          }).then(response => {
+            console.log(response.data)
+            // console.log('get response')
+          }).catch(function (err) {
+            alert(err)
+          })
+           // else {
+           //  // 不存在已有
+           //  for (var i = 0; i < this.tableData.length; i++) {
+           //    if (this.tableData[i].name === this.username) {
+           //      alert('已存在该用户')
+           //      return
+           //    }
+           //  }
+           //  if (this.newUserMail.indexOf('@') === -1) {
+           //    alert('邮箱格式不符合')
+           //    return
+           //  }
+            // common.setUser(this.username)
+            // this.$http({
+            //   method: 'post',
+            //   url: url,
+            //   headers: {
+            //     'Access-Control-Allow-Credentials': true,
+            //     'Access-Control-Allow-Origin': true
+            //     // 'Content-Type': 'text/plain'
+            //   },
+            //   params: {
+            //     'password': that.newPassword
+            //   }
+            // })
+            //   .then(response => {
+            //     console.log(response.data)
+            //     console.log('get response')
+            //   })
+            //   .catch(error => {
+            //     JSON.stringify(error)
+            //     console.log(error)
+            //   })
+            // this.logstate = true
+            alert(this.newUsername + ',欢迎您！')
+            // var userS = {'username': this.newUsername, 'usertype': 0}
+            // this.$store.commit('login', userS)
+            this.$router.push({path: '/home'})
+          },
+        login () {
+          let that = this
+          if (this.username === '' || this.password === '') {
+            alert('请输入用户名')
+          } else {
+            var url='http://101.132.73.215:8080/login'
+            this.$http({method: 'post',
+            url:url,
+            dataType: 'application/x-www-form-urlencoded',
+            headers:{
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+              params: {'username': that.username,
+                'password': that.password
+              }
+          }).then(response => {
+              this.tableData = res.data
+              console.log(response.data)
+              // console.log('get response')
+            }).catch(function (err) {
+              alert(err)
+            })
+          }
+        },
+        logout(){
+          // var url='http://101.132.73.215:8080/logout'
+          this.$http.get('http://101.132.73.215:8080/logout').then((res) => {
+            console.log(res.data)
+          }).catch(function (err) {
+            alert(err)
+          })
         }
       },
       data () {

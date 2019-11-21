@@ -2,7 +2,9 @@
     <div>
         <button @click="ToLogin()">登录账号</button>
         <button @click="changePW()">修改密码</button>
+      <button @click="logout()">退出登录</button>
         <span @click="ret()">返回</span>
+
     </div>
 </template>
 
@@ -14,11 +16,20 @@ export default{
             this.$router.push({path: '/login'})
         },
         changePW() {
-            
+
         },
         ret() {
             this.$router.push({ path: '/home'})
-        }
+        },
+      logout(){
+        // var url='http://101.132.73.215:8080/logout'
+        this.$http.get('http://101.132.73.215:8080/logout').then((res) => {
+          console.log(res.data)
+        }).catch(function (err) {
+          alert(err)
+        })
+        this.$router.push({ path: '/home'})
+      }
     }
 }
 </script>
