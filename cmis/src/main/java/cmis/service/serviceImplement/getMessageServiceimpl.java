@@ -2,6 +2,7 @@ package cmis.service.serviceImplement;
 
 import cmis.dto.GeneralMessage;
 import cmis.service.getMessageService;
+import com.alibaba.fastjson.JSONException;
 import com.aliyun.openservices.iot.api.Profile;
 import com.aliyun.openservices.iot.api.message.MessageClientFactory;
 import com.aliyun.openservices.iot.api.message.api.MessageClient;
@@ -9,28 +10,27 @@ import com.aliyun.openservices.iot.api.message.callback.ConnectionCallback;
 import com.aliyun.openservices.iot.api.message.callback.MessageCallback;
 import com.aliyun.openservices.iot.api.message.entity.Message;
 import com.aliyun.openservices.iot.api.message.entity.MessageToken;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sun.rmi.runtime.Log;
 
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Map;
 
 @Service
 public class getMessageServiceimpl implements getMessageService {
 
     private MessageClient messageClient;
 
+    private MessageCallback messageCallback;
+
+    private String status;
+
     @Autowired
     public void initmessageClient()
     {
-
-        MessageCallback messageCallback = new MessageCallback() {
-            @Override
-            public Action consume(MessageToken messageToken) {
-                Message m = messageToken.getMessage();
-                System.out.println((Arrays.toString(messageToken.getMessage().getPayload())));
-                return Action.CommitSuccess;
-            }
-        };
         String accessKey = "";
         String accessSecret = "";
         String regionId = "cn-shanghai";
@@ -40,7 +40,6 @@ public class getMessageServiceimpl implements getMessageService {
         messageClient = MessageClientFactory.messageClient(profile);
         messageClient.connect(messageToken -> {
             Message m = messageToken.getMessage();
-            System.out.println("receive message from " + m);
             return MessageCallback.Action.CommitSuccess;
         });
         messageClient.setConnectionCallback(new ConnectionCallback() {
@@ -48,7 +47,6 @@ public class getMessageServiceimpl implements getMessageService {
             public void onConnectionLost() {
                 messageClient.connect(messageToken -> {
                     Message m = messageToken.getMessage();
-                    System.out.println("receive message from " + m);
                     return MessageCallback.Action.CommitSuccess;
                 });
             }
@@ -59,11 +57,31 @@ public class getMessageServiceimpl implements getMessageService {
 
             }
         });
-        messageClient.setMessageListener("/${a1UJLmxdlhK}/#",messageCallback);
+        messageCallback = new MessageCallback() {
+            @Override
+            public Action consume(MessageToken messageToken) {
+                Message m = messageToken.getMessage();
+                String receive= new String(messageToken.getMessage().getPayload());
+                try {
+                    JSONObject jsonObject = new JSONObject(receive);
+                    JSONObject items =(JSONObject)jsonObject.get("items");
+                    JSONObject Data =(JSONObject)items.get("Data");
+                    status = Data.getString("value");
+                    System.out.print(status);
+                }catch (JSONException err){
+                    System.out.print("error");
+                }
+                return Action.CommitSuccess;
+            }
+        };
+        messageClient.setMessageListener("/a1UJLmxdlhK/#",messageCallback);
     }
+    
+
+
 
     @Override
     public GeneralMessage getStatus(String id) {
-        return new GeneralMessage(1, "moved", true,null);
+        return new GeneralMessage(1, status, true,null);
     }
 }
