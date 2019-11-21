@@ -23,18 +23,18 @@ public class AccountController {
 
   @RequestMapping(value = "/register", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
   @ResponseBody
-  public GeneralMessage register(@RequestBody JSONObject registerRequest) {
-    System.out.println(registerRequest);
-    RegisterRequest request = new RegisterRequest();
-    request.setPassword(registerRequest.getString("password"));
-    request.setUsername(registerRequest.getString("username"));
-    request.setPhone(registerRequest.getString("phone"));
-    int userType = registerRequest.getInt("type");
-    if (userType == 1) {
-      request.setType(UserType.CUSTOMER);
-    } else {
-      request.setType(UserType.BANK);
-    }
+  public GeneralMessage register(@RequestBody RegisterRequest request) {
+//    System.out.println(registerRequest);
+//    RegisterRequest request = new RegisterRequest();
+//    request.setPassword(registerRequest.getString("password"));
+//    request.setUsername(registerRequest.getString("username"));
+//    request.setPhone(registerRequest.getString("phone"));
+//    int userType = registerRequest.getInt("type");
+//    if (userType == 1) {
+//      request.setType(UserType.CUSTOMER);
+//    } else {
+//      request.setType(UserType.BANK);
+//    }
     return this.accountService.register(request);
   }
 }
