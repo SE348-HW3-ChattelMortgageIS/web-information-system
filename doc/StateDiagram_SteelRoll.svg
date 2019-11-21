@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="641.33465 25.01181 396.907 796.1013" width="396.907" height="796.1013">
+  <defs>
+    <font-face font-family="PingFang SC" font-size="12" panose-1="2 11 4 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="58" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="400">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Regular"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="StickArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -3 6 6" markerWidth="6" markerHeight="6" color="black">
+      <g>
+        <path d="M 4 0 L 0 0 M 0 -1.5 L 4 0 L 0 1.5" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -3 6 6" markerWidth="6" markerHeight="6" color="black">
+      <g>
+        <path d="M 4 0 L 0 -1.5 L 0 1.5 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.11.4 
+    <dc:date>2019-11-13 12:31:27 +0000</dc:date>
+  </metadata>
+  <g id="StateDiagram-_" fill-opacity="1" stroke="none" stroke-dasharray="none" fill="none" stroke-opacity="1">
+    <title>StateDiagram-钢卷</title>
+    <g id="StateDiagram-_: 图层 1">
+      <title>图层 1</title>
+      <g id="Graphic_47">
+        <circle cx="897.6614" cy="34.51181" r="9.00001438111708" fill="black"/>
+        <circle cx="897.6614" cy="34.51181" r="9.00001438111708" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Group_44">
+        <g id="Graphic_46">
+          <circle cx="909.873" cy="811.6131" r="9.00001438111705" fill="white"/>
+          <circle cx="909.873" cy="811.6131" r="9.00001438111705" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_45">
+          <circle cx="909.873" cy="811.6131" r="6.30001006678192" fill="black"/>
+          <circle cx="909.873" cy="811.6131" r="6.30001006678192" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Graphic_43">
+        <path d="M 853.1614 79.35236 L 942.1614 79.35236 C 944.9228 79.35236 947.1614 81.59094 947.1614 84.35236 L 947.1614 101.35236 C 947.1614 104.11379 944.9228 106.35236 942.1614 106.35236 L 853.1614 106.35236 C 850.4 106.35236 848.1614 104.11379 848.1614 101.35236 L 848.1614 84.35236 C 848.1614 81.59094 850.4 79.35236 853.1614 79.35236 Z" fill="white"/>
+        <path d="M 853.1614 79.35236 L 942.1614 79.35236 C 944.9228 79.35236 947.1614 81.59094 947.1614 84.35236 L 947.1614 101.35236 C 947.1614 104.11379 944.9228 106.35236 942.1614 106.35236 L 853.1614 106.35236 C 850.4 106.35236 848.1614 104.11379 848.1614 101.35236 L 848.1614 84.35236 C 848.1614 81.59094 850.4 79.35236 853.1614 79.35236 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(853.1614 84.35236)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="26.5" y="13">待认证</tspan>
+        </text>
+      </g>
+      <g id="Graphic_42">
+        <path d="M 1019.3716 50.17712 C 1019.3716 46.818166 1018.5969 46.402596 1012.9379 43.07839 L 1012.8781 43.043995 C 1007.1893 39.68504 1007.1301 39.68504 1001.2918 39.68504 C 993.518 39.68504 958.3716 39.68504 958.3716 39.68504 L 958.3716 75.14324 L 1019.3716 75.14324 L 1019.3716 50.17712 Z" fill="white"/>
+        <path d="M 1019.3716 50.17712 C 1019.3716 46.818166 1018.5969 46.402596 1012.9379 43.07839 L 1012.8781 43.043995 C 1007.1893 39.68504 1007.1301 39.68504 1001.2918 39.68504 C 993.518 39.68504 958.3716 39.68504 958.3716 39.68504 L 958.3716 75.14324 L 1019.3716 75.14324 L 1019.3716 50.17712 Z M 1019.3716 50.004085 C 1019.3716 46.818166 1019.3118 46.818166 1007.1301 46.818166 L 1007.1301 46.818166 C 1007.1301 39.71979 1007.1301 39.68504 1001.6492 39.68504" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(963.3716 48.91414)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="1.5" y="13">创建钢卷</tspan>
+        </text>
+      </g>
+      <g id="Graphic_41">
+        <path d="M 853.1614 142.19291 L 942.1614 142.19291 C 944.9228 142.19291 947.1614 144.43149 947.1614 147.19291 L 947.1614 164.19291 C 947.1614 166.95434 944.9228 169.19291 942.1614 169.19291 L 853.1614 169.19291 C 850.4 169.19291 848.1614 166.95434 848.1614 164.19291 L 848.1614 147.19291 C 848.1614 144.43149 850.4 142.19291 853.1614 142.19291 Z" fill="white"/>
+        <path d="M 853.1614 142.19291 L 942.1614 142.19291 C 944.9228 142.19291 947.1614 144.43149 947.1614 147.19291 L 947.1614 164.19291 C 947.1614 166.95434 944.9228 169.19291 942.1614 169.19291 L 853.1614 169.19291 C 850.4 169.19291 848.1614 166.95434 848.1614 164.19291 L 848.1614 147.19291 C 848.1614 144.43149 850.4 142.19291 853.1614 142.19291 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(853.1614 147.19291)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="26.5" y="13">未入库</tspan>
+        </text>
+      </g>
+      <g id="Graphic_40">
+        <path d="M 897.6614 208.34646 L 919.2981 223.868 L 897.6614 239.38956 L 876.0247 223.868 Z" fill="white"/>
+        <path d="M 897.6614 208.34646 L 919.2981 223.868 L 897.6614 239.38956 L 876.0247 223.868 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_39">
+        <path d="M 771.3487 313.63673 L 860.3487 313.63673 C 863.1101 313.63673 865.3487 315.8753 865.3487 318.63673 L 865.3487 335.63673 C 865.3487 338.39815 863.1101 340.63673 860.3487 340.63673 L 771.3487 340.63673 C 768.5873 340.63673 766.3487 338.39815 766.3487 335.63673 L 766.3487 318.63673 C 766.3487 315.8753 768.5873 313.63673 771.3487 313.63673 Z" fill="white"/>
+        <path d="M 771.3487 313.63673 L 860.3487 313.63673 C 863.1101 313.63673 865.3487 315.8753 865.3487 318.63673 L 865.3487 335.63673 C 865.3487 338.39815 863.1101 340.63673 860.3487 340.63673 L 771.3487 340.63673 C 768.5873 340.63673 766.3487 338.39815 766.3487 335.63673 L 766.3487 318.63673 C 766.3487 315.8753 768.5873 313.63673 771.3487 313.63673 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(771.3487 318.63673)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="26.5" y="13">抵押中</tspan>
+        </text>
+      </g>
+      <g id="Graphic_38">
+        <path d="M 930.4464 700.5659 L 1019.4464 700.5659 C 1022.2078 700.5659 1024.4464 702.80444 1024.4464 705.5659 L 1024.4464 722.5659 C 1024.4464 725.3273 1022.2078 727.5659 1019.4464 727.5659 L 930.4464 727.5659 C 927.685 727.5659 925.4464 725.3273 925.4464 722.5659 L 925.4464 705.5659 C 925.4464 702.80444 927.685 700.5659 930.4464 700.5659 Z" fill="white"/>
+        <path d="M 930.4464 700.5659 L 1019.4464 700.5659 C 1022.2078 700.5659 1024.4464 702.80444 1024.4464 705.5659 L 1024.4464 722.5659 C 1024.4464 725.3273 1022.2078 727.5659 1019.4464 727.5659 L 930.4464 727.5659 C 927.685 727.5659 925.4464 725.3273 925.4464 722.5659 L 925.4464 705.5659 C 925.4464 702.80444 927.685 700.5659 930.4464 700.5659 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(930.4464 705.5659)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="26.5" y="13">未抵押</tspan>
+        </text>
+      </g>
+      <g id="Line_34">
+        <line x1="897.6614" y1="43.511816" x2="897.6614" y2="73.45236" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_33">
+        <line x1="897.6614" y1="106.35236" x2="897.6614" y2="136.29291" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_32">
+        <line x1="897.6614" y1="169.19291" x2="897.6614" y2="202.44646" marker-end="url(#StickArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Graphic_25">
+        <path d="M 1019.3716 113.95665 C 1019.3716 110.5977 1018.5969 110.18212 1012.9379 106.85792 L 1012.8781 106.82352 C 1007.1893 103.46457 1007.1301 103.46457 1001.2918 103.46457 C 993.518 103.46457 958.3716 103.46457 958.3716 103.46457 L 958.3716 138.92277 L 1019.3716 138.92277 L 1019.3716 113.95665 Z" fill="white"/>
+        <path d="M 1019.3716 113.95665 C 1019.3716 110.5977 1018.5969 110.18212 1012.9379 106.85792 L 1012.8781 106.82352 C 1007.1893 103.46457 1007.1301 103.46457 1001.2918 103.46457 C 993.518 103.46457 958.3716 103.46457 958.3716 103.46457 L 958.3716 138.92277 L 1019.3716 138.92277 L 1019.3716 113.95665 Z M 1019.3716 113.78361 C 1019.3716 110.5977 1019.3118 110.5977 1007.1301 110.5977 L 1007.1301 110.5977 C 1007.1301 103.49932 1007.1301 103.46457 1001.6492 103.46457" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(963.3716 112.69367)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="1.5" y="13">申请抵押</tspan>
+        </text>
+      </g>
+      <g id="Graphic_24">
+        <path d="M 1037.7417 177.73618 C 1037.7417 174.37722 1036.7337 173.96165 1029.3705 170.63745 L 1029.2927 170.60305 C 1021.8907 167.2441 1021.8137 167.2441 1014.2172 167.2441 C 1004.1022 167.2441 958.3716 167.2441 958.3716 167.2441 L 958.3716 202.7023 L 1037.7417 202.7023 L 1037.7417 177.73618 Z" fill="white"/>
+        <path d="M 1037.7417 177.73618 C 1037.7417 174.37722 1036.7337 173.96165 1029.3705 170.63745 L 1029.2927 170.60305 C 1021.8907 167.2441 1021.8137 167.2441 1014.2172 167.2441 C 1004.1022 167.2441 958.3716 167.2441 958.3716 167.2441 L 958.3716 202.7023 L 1037.7417 202.7023 L 1037.7417 177.73618 Z M 1037.7417 177.56314 C 1037.7417 174.37722 1037.6639 174.37722 1021.8137 174.37722 L 1021.8137 174.37722 C 1021.8137 167.27885 1021.8137 167.2441 1014.6823 167.2441" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(963.3716 167.9732)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="22.68504" y="13">分配</tspan>
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="10.68504" y="30">存放场地</tspan>
+        </text>
+      </g>
+      <g id="Graphic_23">
+        <path d="M 992.3716 241.82925 C 992.3716 238.4703 991.5969 238.05473 985.9379 234.73052 L 985.8781 234.69613 C 980.1893 231.33717 980.1301 231.33717 974.2918 231.33717 C 966.5179 231.33717 931.3716 231.33717 931.3716 231.33717 L 931.3716 266.79537 L 992.3716 266.79537 L 992.3716 241.82925 Z" fill="white"/>
+        <path d="M 992.3716 241.82925 C 992.3716 238.4703 991.5969 238.05473 985.9379 234.73052 L 985.8781 234.69613 C 980.1893 231.33717 980.1301 231.33717 974.2918 231.33717 C 966.5179 231.33717 931.3716 231.33717 931.3716 231.33717 L 931.3716 266.79537 L 992.3716 266.79537 L 992.3716 241.82925 Z M 992.3716 241.65622 C 992.3716 238.4703 992.3118 238.4703 980.1301 238.4703 L 980.1301 238.4703 C 980.1301 231.37192 980.1301 231.33717 974.6492 231.33717" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(936.3716 240.56627)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="1.5" y="13">场地不足</tspan>
+        </text>
+      </g>
+      <g id="Graphic_22">
+        <path d="M 797.1575 228.47633 C 797.1575 225.11737 796.3828 224.7018 790.7238 221.3776 L 790.664 221.3432 C 784.97515 217.98425 784.916 217.98425 779.0777 217.98425 C 771.3038 217.98425 736.1575 217.98425 736.1575 217.98425 L 736.1575 253.44245 L 797.1575 253.44245 L 797.1575 228.47633 Z" fill="white"/>
+        <path d="M 797.1575 228.47633 C 797.1575 225.11737 796.3828 224.7018 790.7238 221.3776 L 790.664 221.3432 C 784.97515 217.98425 784.916 217.98425 779.0777 217.98425 C 771.3038 217.98425 736.1575 217.98425 736.1575 217.98425 L 736.1575 253.44245 L 797.1575 253.44245 L 797.1575 228.47633 Z M 797.1575 228.3033 C 797.1575 225.11737 797.0977 225.11737 784.916 225.11737 L 784.916 225.11737 C 784.916 218.019 784.916 217.98425 779.4351 217.98425" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(741.1575 218.71335)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="13.5" y="13">生成</tspan>
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="1.5" y="30">抵押存单</tspan>
+        </text>
+      </g>
+      <g id="Line_12">
+        <line x1="958.3716" y1="57.12722" x2="897.6614" y2="56.55611" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_11">
+        <line x1="958.3716" y1="121.54783" x2="897.6614" y2="122.25279" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_10">
+        <line x1="958.3716" y1="184.95548" x2="897.6614" y2="184.9284" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Graphic_48">
+        <path d="M 761.4134 527.6776 L 783.0501 543.19916 L 761.4134 558.7207 L 739.7767 543.19916 Z" fill="white"/>
+        <path d="M 761.4134 527.6776 L 783.0501 543.19916 L 761.4134 558.7207 L 739.7767 543.19916 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_49">
+        <path d="M 959.1024 351.68504 C 959.1024 348.3261 958.0944 347.9105 950.7312 344.5863 L 950.6534 344.5519 C 943.2514 341.19296 943.1744 341.19296 935.5779 341.19296 C 925.463 341.19296 879.7323 341.19296 879.7323 341.19296 L 879.7323 376.65116 L 959.1024 376.65116 L 959.1024 351.68504 Z" fill="white"/>
+        <path d="M 959.1024 351.68504 C 959.1024 348.3261 958.0944 347.9105 950.7312 344.5863 L 950.6534 344.5519 C 943.2514 341.19296 943.1744 341.19296 935.5779 341.19296 C 925.463 341.19296 879.7323 341.19296 879.7323 341.19296 L 879.7323 376.65116 L 959.1024 376.65116 L 959.1024 351.68504 Z M 959.1024 351.512 C 959.1024 348.3261 959.0246 348.3261 943.1744 348.3261 L 943.1744 348.3261 C 943.1744 341.2277 943.1744 341.19296 936.043 341.19296" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(884.7323 350.42206)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="10.68504" y="13">监控状态</tspan>
+        </text>
+      </g>
+      <g id="Graphic_50">
+        <path d="M 740.83465 410.17896 C 740.83465 406.82 739.82665 406.40443 732.4635 403.08023 L 732.3857 403.04583 C 724.98365 399.68688 724.9067 399.68688 717.31015 399.68688 C 707.1952 399.68688 661.4646 399.68688 661.4646 399.68688 L 661.4646 435.1451 L 740.83465 435.1451 L 740.83465 410.17896 Z" fill="white"/>
+        <path d="M 740.83465 410.17896 C 740.83465 406.82 739.82665 406.40443 732.4635 403.08023 L 732.3857 403.04583 C 724.98365 399.68688 724.9067 399.68688 717.31015 399.68688 C 707.1952 399.68688 661.4646 399.68688 661.4646 399.68688 L 661.4646 435.1451 L 740.83465 435.1451 L 740.83465 410.17896 Z M 740.83465 410.0059 C 740.83465 406.82 740.7569 406.82 724.9067 406.82 L 724.9067 406.82 C 724.9067 399.72162 724.9067 399.68688 717.7753 399.68688" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(666.4646 408.916)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="10.68504" y="13">状态正常</tspan>
+        </text>
+      </g>
+      <g id="Graphic_51">
+        <path d="M 967.6063 410.17896 C 967.6063 406.82 966.5983 406.40443 959.2351 403.08023 L 959.1574 403.04583 C 951.7553 399.68688 951.6783 399.68688 944.0818 399.68688 C 933.9669 399.68688 888.2362 399.68688 888.2362 399.68688 L 888.2362 435.1451 L 967.6063 435.1451 L 967.6063 410.17896 Z" fill="white"/>
+        <path d="M 967.6063 410.17896 C 967.6063 406.82 966.5983 406.40443 959.2351 403.08023 L 959.1574 403.04583 C 951.7553 399.68688 951.6783 399.68688 944.0818 399.68688 C 933.9669 399.68688 888.2362 399.68688 888.2362 399.68688 L 888.2362 435.1451 L 967.6063 435.1451 L 967.6063 410.17896 Z M 967.6063 410.0059 C 967.6063 406.82 967.5285 406.82 951.6783 406.82 L 951.6783 406.82 C 951.6783 399.72162 951.6783 399.68688 944.5469 399.68688" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(893.2362 408.916)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="10.68504" y="13">状态异常</tspan>
+        </text>
+      </g>
+      <g id="Graphic_52">
+        <path d="M 716.9134 458.1808 L 805.9134 458.1808 C 808.6748 458.1808 810.9134 460.41937 810.9134 463.1808 L 810.9134 480.1808 C 810.9134 482.9422 808.6748 485.1808 805.9134 485.1808 L 716.9134 485.1808 C 714.152 485.1808 711.9134 482.9422 711.9134 480.1808 L 711.9134 463.1808 C 711.9134 460.41937 714.152 458.1808 716.9134 458.1808 Z" fill="white"/>
+        <path d="M 716.9134 458.1808 L 805.9134 458.1808 C 808.6748 458.1808 810.9134 460.41937 810.9134 463.1808 L 810.9134 480.1808 C 810.9134 482.9422 808.6748 485.1808 805.9134 485.1808 L 716.9134 485.1808 C 714.152 485.1808 711.9134 482.9422 711.9134 480.1808 L 711.9134 463.1808 C 711.9134 460.41937 714.152 458.1808 716.9134 458.1808 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(716.9134 463.1808)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="26.5" y="13">抵押中</tspan>
+        </text>
+      </g>
+      <g id="Graphic_53">
+        <path d="M 824.8729 458.1808 L 913.873 458.1808 C 916.6344 458.1808 918.873 460.41937 918.873 463.1808 L 918.873 480.1808 C 918.873 482.9422 916.6344 485.1808 913.873 485.1808 L 824.8729 485.1808 C 822.1115 485.1808 819.8729 482.9422 819.8729 480.1808 L 819.8729 463.1808 C 819.8729 460.41937 822.1115 458.1808 824.8729 458.1808 Z" fill="white"/>
+        <path d="M 824.8729 458.1808 L 913.873 458.1808 C 916.6344 458.1808 918.873 460.41937 918.873 463.1808 L 918.873 480.1808 C 918.873 482.9422 916.6344 485.1808 913.873 485.1808 L 824.8729 485.1808 C 822.1115 485.1808 819.8729 482.9422 819.8729 480.1808 L 819.8729 463.1808 C 819.8729 460.41937 822.1115 458.1808 824.8729 458.1808 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(824.8729 463.1808)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="14.5" y="13">异常状态中</tspan>
+        </text>
+      </g>
+      <g id="Graphic_54">
+        <path d="M 740.83465 502.7115 C 740.83465 499.35253 739.82665 498.93696 732.4635 495.61276 L 732.3857 495.57836 C 724.98365 492.2194 724.9067 492.2194 717.31015 492.2194 C 707.1952 492.2194 661.4646 492.2194 661.4646 492.2194 L 661.4646 527.6776 L 740.83465 527.6776 L 740.83465 502.7115 Z" fill="white"/>
+        <path d="M 740.83465 502.7115 C 740.83465 499.35253 739.82665 498.93696 732.4635 495.61276 L 732.3857 495.57836 C 724.98365 492.2194 724.9067 492.2194 717.31015 492.2194 C 707.1952 492.2194 661.4646 492.2194 661.4646 492.2194 L 661.4646 527.6776 L 740.83465 527.6776 L 740.83465 502.7115 Z M 740.83465 502.53845 C 740.83465 499.35253 740.7569 499.35253 724.9067 499.35253 L 724.9067 499.35253 C 724.9067 492.25416 724.9067 492.2194 717.7753 492.2194" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(666.4646 501.4485)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="10.68504" y="13">赎回钢卷</tspan>
+        </text>
+      </g>
+      <g id="Graphic_55">
+        <path d="M 785.5197 609.8572 L 874.5197 609.8572 C 877.2811 609.8572 879.5197 612.0958 879.5197 614.8572 L 879.5197 631.8572 C 879.5197 634.6186 877.2811 636.8572 874.5197 636.8572 L 785.5197 636.8572 C 782.7583 636.8572 780.5197 634.6186 780.5197 631.8572 L 780.5197 614.8572 C 780.5197 612.0958 782.7583 609.8572 785.5197 609.8572 Z" fill="white"/>
+        <path d="M 785.5197 609.8572 L 874.5197 609.8572 C 877.2811 609.8572 879.5197 612.0958 879.5197 614.8572 L 879.5197 631.8572 C 879.5197 634.6186 877.2811 636.8572 874.5197 636.8572 L 785.5197 636.8572 C 782.7583 636.8572 780.5197 634.6186 780.5197 631.8572 L 780.5197 614.8572 C 780.5197 612.0958 782.7583 609.8572 785.5197 609.8572 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(785.5197 614.8572)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="26.5" y="13">待付款</tspan>
+        </text>
+      </g>
+      <g id="Graphic_56">
+        <path d="M 646.83465 609.8572 L 735.83465 609.8572 C 738.5961 609.8572 740.83465 612.0958 740.83465 614.8572 L 740.83465 631.8572 C 740.83465 634.6186 738.5961 636.8572 735.83465 636.8572 L 646.83465 636.8572 C 644.0732 636.8572 641.83465 634.6186 641.83465 631.8572 L 641.83465 614.8572 C 641.83465 612.0958 644.0732 609.8572 646.83465 609.8572 Z" fill="white"/>
+        <path d="M 646.83465 609.8572 L 735.83465 609.8572 C 738.5961 609.8572 740.83465 612.0958 740.83465 614.8572 L 740.83465 631.8572 C 740.83465 634.6186 738.5961 636.8572 735.83465 636.8572 L 646.83465 636.8572 C 644.0732 636.8572 641.83465 634.6186 641.83465 631.8572 L 641.83465 614.8572 C 641.83465 612.0958 644.0732 609.8572 646.83465 609.8572 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(646.83465 614.8572)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="26.5" y="13">抵押中</tspan>
+        </text>
+      </g>
+      <g id="Graphic_57">
+        <path d="M 815.8487 378.8336 L 837.4854 394.35513 L 815.8487 409.8767 L 794.212 394.35513 Z" fill="white"/>
+        <path d="M 815.8487 378.8336 L 837.4854 394.35513 L 815.8487 409.8767 L 794.212 394.35513 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_58">
+        <line x1="815.8487" y1="340.63673" x2="815.8487" y2="372.9336" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_59">
+        <path d="M 794.212 394.35513 L 761.4134 394.35513 L 761.4134 452.2808" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_60">
+        <path d="M 837.4854 394.35513 L 869.373 394.35513 L 869.373 452.2808" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_61">
+        <line x1="761.4134" y1="485.1808" x2="761.4134" y2="521.7776" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_62">
+        <path d="M 783.0501 543.19916 L 830.0197 543.19916 L 830.0197 603.9572" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_63">
+        <path d="M 739.7767 543.19916 L 691.33465 543.19916 L 691.33465 603.9572" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Graphic_64">
+        <path d="M 974.9464 650.1465 L 991.9464 665.6465 L 974.9464 681.1465 L 957.9464 665.6465 Z" fill="white"/>
+        <path d="M 974.9464 650.1465 L 991.9464 665.6465 L 974.9464 681.1465 L 957.9464 665.6465 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_65">
+        <path d="M 909.873 749.5895 L 926.873 765.0895 L 909.873 780.5895 L 892.873 765.0895 Z" fill="white"/>
+        <path d="M 909.873 749.5895 L 926.873 765.0895 L 909.873 780.5895 L 892.873 765.0895 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_66">
+        <path d="M 919.2981 223.868 L 1020.2779 223.868 L 1020.2779 665.6465 L 997.8464 665.6465" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_67">
+        <path d="M 830.0197 636.8572 L 830.0197 665.6465 L 952.0464 665.6465" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_68">
+        <path d="M 974.9464 681.1465 L 974.9464 690.8562 L 974.9464 694.6659" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_69">
+        <path d="M 974.9464 727.5659 L 974.9464 765.0895 L 932.773 765.0895" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_70">
+        <path d="M 691.33465 636.8572 L 691.33465 765.0895 L 886.973 765.0895" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_71">
+        <line x1="909.873" y1="780.5895" x2="909.873" y2="796.7131" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_72">
+        <path d="M 992.3716 249.06627 L 993.6684 249.06627 L 1006.3247 249.05237 L 1010.2779 249.03846 L 1020.2779 249.03846" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_73">
+        <path d="M 879.7323 358.92206 L 869.7323 358.92206 L 825.8487 358.59694 L 815.8487 358.59694" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_74">
+        <path d="M 888.2362 417.416 L 878.2362 417.416 L 879.373 417.42047 L 869.373 417.42047" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_75">
+        <path d="M 740.83465 417.416 L 750.3878 417.416 L 751.124 417.45687 L 751.4134 417.49776 L 761.4134 417.49776" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_76">
+        <path d="M 740.83465 509.9485 L 750.3878 509.9485 L 751.124 509.8942 L 751.4134 509.83983 L 761.4134 509.83983" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_77">
+        <path d="M 869.373 485.1808 L 869.373 545.1117 L 974.9464 545.1117 L 974.9464 650.1465" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Graphic_78">
+        <path d="M 771.3487 260.51325 L 860.3487 260.51325 C 863.1101 260.51325 865.3487 262.75182 865.3487 265.51325 L 865.3487 282.51325 C 865.3487 285.27467 863.1101 287.51325 860.3487 287.51325 L 771.3487 287.51325 C 768.5873 287.51325 766.3487 285.27467 766.3487 282.51325 L 766.3487 265.51325 C 766.3487 262.75182 768.5873 260.51325 771.3487 260.51325 Z" fill="white"/>
+        <path d="M 771.3487 260.51325 L 860.3487 260.51325 C 863.1101 260.51325 865.3487 262.75182 865.3487 265.51325 L 865.3487 282.51325 C 865.3487 285.27467 863.1101 287.51325 860.3487 287.51325 L 771.3487 287.51325 C 768.5873 287.51325 766.3487 285.27467 766.3487 282.51325 L 766.3487 265.51325 C 766.3487 262.75182 768.5873 260.51325 771.3487 260.51325 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(771.3487 265.51325)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="20.5" y="13">等待入库</tspan>
+        </text>
+      </g>
+      <g id="Line_79">
+        <path d="M 876.0247 223.868 L 815.8487 223.868 L 815.8487 254.61325" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_80">
+        <line x1="815.8487" y1="287.51325" x2="815.8487" y2="307.73673" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Graphic_81">
+        <path d="M 745.5669 291.122 C 745.5669 287.76305 744.5589 287.34748 737.1958 284.02327 L 737.118 283.98888 C 729.7159 280.62992 729.63895 280.62992 722.0424 280.62992 C 711.9275 280.62992 666.19686 280.62992 666.19686 280.62992 L 666.19686 316.08812 L 745.5669 316.08812 L 745.5669 291.122 Z" fill="white"/>
+        <path d="M 745.5669 291.122 C 745.5669 287.76305 744.5589 287.34748 737.1958 284.02327 L 737.118 283.98888 C 729.7159 280.62992 729.63895 280.62992 722.0424 280.62992 C 711.9275 280.62992 666.19686 280.62992 666.19686 280.62992 L 666.19686 316.08812 L 745.5669 316.08812 L 745.5669 291.122 Z M 745.5669 290.94897 C 745.5669 287.76305 745.48915 287.76305 729.63895 287.76305 L 729.63895 287.76305 C 729.63895 280.66467 729.63895 280.62992 722.50755 280.62992" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(671.19686 281.35902)" fill="black">
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="10.68504" y="13">张贴存单</tspan>
+          <tspan font-family="PingFang SC" font-size="12" font-weight="400" fill="black" x="10.68504" y="30">（入库）</tspan>
+        </text>
+      </g>
+      <g id="Line_82">
+        <path d="M 797.1575 235.71335 L 803.0618 235.71335 L 806.5031 235.7462 L 805.8487 235.77904 L 815.8487 235.77904" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_83">
+        <path d="M 745.5669 298.35902 L 755.5669 298.35902 L 805.8487 298.19797 L 815.8487 298.19797" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>
