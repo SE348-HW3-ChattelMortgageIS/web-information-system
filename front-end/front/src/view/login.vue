@@ -53,15 +53,20 @@
           }
           this.$http({method: 'post',
             url:url,
-            dataType: 'application/x-www-form-urlencoded',
-            headers:{
-              'Content-Type': 'application/x-www-form-urlencoded'
+            data: {
+              'username': this.newUsername,
+              'password': this.newPassword,
+              'phone': this.newUserMail,
+              'type': 1
             },
-            params: {'username': that.newUsername,
-              'password': that.newPassword
-            }
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            withCredentials: true
           }).then(response => {
+            console.log('return')
             console.log(response.data)
+            this.tableData = response.data
             // console.log('get response')
           }).catch(function (err) {
             alert(err)
@@ -100,10 +105,12 @@
             //     console.log(error)
             //   })
             // this.logstate = true
+          if (this.tableData.succeeded==true){
             alert(this.newUsername + ',欢迎您！')
             // var userS = {'username': this.newUsername, 'usertype': 0}
             // this.$store.commit('login', userS)
             this.$router.push({path: '/home'})
+          }
           },
         login () {
           let that = this
@@ -121,12 +128,15 @@
                 'password': that.password
               }
           }).then(response => {
-              this.tableData = res.data
+              this.tableData = response.data
               console.log(response.data)
               // console.log('get response')
             }).catch(function (err) {
               alert(err)
             })
+            if (this.tableData.succeeded){
+              alert('welcome')
+            }
           }
         },
         logout(){
