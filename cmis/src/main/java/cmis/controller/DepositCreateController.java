@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping()
 @CrossOrigin("*")
 public class DepositCreateController {
     @Autowired
     private DepositService depositService;
 
-    @RequestMapping(value = "/depositcreate", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "customer/depositcreate", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     @ResponseBody
     public GeneralMessage DepositCreate(HttpServletRequest httpServletRequest) {
         Integer steelRollId = new Integer(httpServletRequest.getParameter("steelrollid"));

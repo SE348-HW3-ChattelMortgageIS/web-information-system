@@ -3,10 +3,14 @@ package cmis.service.serviceImplement;
 import cmis.dto.GeneralMessage;
 import cmis.entity.DepositReceipt;
 import cmis.entity.SteelRoll;
+import cmis.entity.UserEntity;
 import cmis.repository.DepositReceiptRepostitory;
 import cmis.repository.SteelRollRepository;
+import cmis.repository.UserEntityRepository;
 import cmis.service.DepositService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
@@ -15,6 +19,7 @@ import java.util.TimeZone;
 
 import static cmis.entity.DepositReceipt.DepositReceiptState.IN_EFFECT;
 import static cmis.entity.DepositReceipt.DepositReceiptState.UNFINISHED;
+import static cmis.entity.SteelRoll.SteelRollState.REDEEMED;
 
 @Service
 public class DepositServiceServiceImplement implements DepositService {
@@ -24,9 +29,20 @@ public class DepositServiceServiceImplement implements DepositService {
     @Autowired
     private SteelRollRepository steelRollRepository;
 
+    @Autowired
+    private UserEntityRepository userEntityRepository;
+
     public GeneralMessage createDeposit(Integer steelRollId,Integer mortgageDays){
+        User principal = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        UserEntity currentUser = userEntityRepository.findByUsername(principal.getUsername());
         DepositReceipt depositReceipt = new DepositReceipt();
         SteelRoll steelRoll = steelRollRepository.findBySteelRollId(steelRollId);
+        if(!steelRoll.getBelongTo().equals(currentUser)){
+            return new GeneralMessage(500, "wrong credit", false, null);
+        }
+        if(!steelRoll.getSteelRollState().equals(REDEEMED)){
+            return new GeneralMessage(500, "wrong state", false, null);
+        }
         Date now = new Date(0);
         Date date = new Date();
         depositReceipt.setMorgageDays(mortgageDays);

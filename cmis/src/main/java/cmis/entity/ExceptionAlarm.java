@@ -10,7 +10,8 @@ import javax.persistence.OneToOne;
 
 
 @Entity
-public class ExceptionAlarm {
+public class
+ExceptionAlarm {
   @Id
   @GeneratedValue
   private Integer alarmId;
