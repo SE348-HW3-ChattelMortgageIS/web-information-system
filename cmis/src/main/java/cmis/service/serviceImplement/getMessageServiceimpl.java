@@ -31,8 +31,8 @@ public class getMessageServiceimpl implements getMessageService {
     @Autowired
     public void initmessageClient()
     {
-        String accessKey = "LTAI4FiEEZF93DNiT6dfcwwL";
-        String accessSecret = "RiPCaGOfIzxRGPE2ql4eqDl1LpQSnK";
+        String accessKey = "";
+        String accessSecret = "";
         String regionId = "cn-shanghai";
         String uid = "1591662154888233";
         String endPoint = "https://" + uid + ".iot-as-http2." + regionId + ".aliyuncs.com";
