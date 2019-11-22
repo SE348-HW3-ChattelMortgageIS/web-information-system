@@ -1,5 +1,7 @@
 package cmis.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,9 +20,11 @@ public class DepositReceipt {
   @JoinColumn(nullable = false, unique = true)
   private SteelRoll steelRoll;
 
+  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
   @Column(nullable = false)
   private Date startAt;
 
+  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
   @Column(nullable = false)
   private Date createdAt;
 
