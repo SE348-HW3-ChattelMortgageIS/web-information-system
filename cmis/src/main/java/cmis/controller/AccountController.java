@@ -2,9 +2,8 @@ package cmis.controller;
 
 import cmis.dto.GeneralMessage;
 import cmis.dto.RegisterRequest;
-import cmis.entity.UserEntity.UserType;
 import cmis.service.AccountService;
-import org.json.JSONObject;
+import cmis.service.initDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,21 +19,18 @@ public class AccountController {
 
   @Autowired
   private AccountService accountService;
+  @Autowired
+  private initDate init;
 
   @RequestMapping(value = "/register", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
   @ResponseBody
   public GeneralMessage register(@RequestBody RegisterRequest request) {
-//    System.out.println(registerRequest);
-//    RegisterRequest request = new RegisterRequest();
-//    request.setPassword(registerRequest.getString("password"));
-//    request.setUsername(registerRequest.getString("username"));
-//    request.setPhone(registerRequest.getString("phone"));
-//    int userType = registerRequest.getInt("type");
-//    if (userType == 1) {
-//      request.setType(UserType.CUSTOMER);
-//    } else {
-//      request.setType(UserType.BANK);
-//    }
     return this.accountService.register(request);
+  }
+
+  @RequestMapping(value = "/init", method = RequestMethod.GET)
+  @ResponseBody
+  public String init(@RequestBody RegisterRequest request) {
+    return this.init.fillTestData();
   }
 }
