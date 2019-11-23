@@ -130,6 +130,7 @@ public class initDate {
     request.setPhone("13288230012");
     request.setUsername("宝宝刚集团");
     request.setPassword("bbg123123");
+    //System.out.println("OK Here!");
     return (UserEntity) this.accountService.register(request).getEntity();
   }
 

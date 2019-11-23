@@ -84,4 +84,10 @@ public class getMessageServiceimpl implements getMessageService {
     public GeneralMessage getStatus(String id) {
         return new GeneralMessage(1, status, true,null);
     }
+    @Override
+    public  GeneralMessage testStatus(String id){
+        if(id == "4")
+            return new GeneralMessage(1,"yes",true,null);
+        return new GeneralMessage(1,"yes",true,null);
+    }
 }
