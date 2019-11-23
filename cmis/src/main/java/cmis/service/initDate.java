@@ -101,10 +101,12 @@ public class initDate {
           redeemOrder.setDepositReceipt(receipt);
           if (receipt.getReceiptState() == DepositReceiptState.REDEEMING) {
             redeemOrder.setPayed(false);
+            redeemOrder.setRedeemOrderState(RedeemOrder.RedeemOrderState.COMPLETED);
           } else {
             redeemOrder.setPayed(true);
+            redeemOrder.setRedeemOrderState(RedeemOrder.RedeemOrderState.PAID);
           }
-          redeemOrder.setPaymentDeadline(new Date());
+
           redeemOrder.setRedeemPrice(BigDecimal.valueOf(10092.312));
           this.redeemOrderRepository.save(redeemOrder);
         }
