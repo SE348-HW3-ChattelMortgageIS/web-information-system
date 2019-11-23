@@ -14,10 +14,16 @@ public class DepositEffectController {
     @Autowired
     private DepositService depositService;
 
-    @RequestMapping(value = "bank/depositeffect", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/depositeffect", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     @ResponseBody
     public GeneralMessage DepositEffect(HttpServletRequest httpServletRequest) {
         Integer receiptId = new Integer(httpServletRequest.getParameter("receiptid"));
         return this.depositService.effectDeposit(receiptId);
+    }
+
+    @RequestMapping(value = "/depositMessage", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public GeneralMessage DepositMessage() {
+        return this.depositService.depositMessage();
     }
 }

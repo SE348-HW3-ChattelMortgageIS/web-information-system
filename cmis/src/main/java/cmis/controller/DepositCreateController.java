@@ -13,11 +13,13 @@ public class DepositCreateController {
     @Autowired
     private DepositService depositService;
 
-    @RequestMapping(value = "customer/depositcreate", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/depositcreate", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     @ResponseBody
     public GeneralMessage DepositCreate(HttpServletRequest httpServletRequest) {
         Integer steelRollId = new Integer(httpServletRequest.getParameter("steelrollid"));
         Integer mortgageDays = new Integer(httpServletRequest.getParameter("mortgagedays"));
         return this.depositService.createDeposit(steelRollId,mortgageDays);
     }
+
+
 }

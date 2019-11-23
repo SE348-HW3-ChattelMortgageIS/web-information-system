@@ -15,8 +15,6 @@ public class RepositoryServiceImplement implements RepositoryService {
     @Autowired
     private RepositoryPositionRepository repositoryPositionRepository;
 
-    @Autowired
-    private getMessageService getMessageService;
 
     public GeneralMessage lookRepositoryMessage(){
         try {
@@ -26,9 +24,4 @@ public class RepositoryServiceImplement implements RepositoryService {
             return new GeneralMessage(500, e.getMessage(), false, null);
         }
     }
-
-    public GeneralMessage alarmRepositoryMessage(){
-        return new GeneralMessage(500, "11", false, null);
-    }
-
 }
