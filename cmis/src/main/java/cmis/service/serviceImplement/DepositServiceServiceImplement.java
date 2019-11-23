@@ -23,6 +23,7 @@ import java.util.TimeZone;
 import static cmis.entity.DepositReceipt.DepositReceiptState.IN_EFFECT;
 import static cmis.entity.DepositReceipt.DepositReceiptState.UNFINISHED;
 import static cmis.entity.SteelRoll.SteelRollState.*;
+import static org.apache.logging.log4j.ThreadContext.isEmpty;
 
 @Service
 public class DepositServiceServiceImplement implements DepositService {
@@ -38,17 +39,18 @@ public class DepositServiceServiceImplement implements DepositService {
     public GeneralMessage createDeposit(Integer steelRollId, Integer mortgageDays) {
         DepositReceipt depositReceipt = new DepositReceipt();
         SteelRoll steelRoll = steelRollRepository.findBySteelRollId(steelRollId);
+        if(steelRoll == null){
+            return new GeneralMessage(500, "no such steel roll", false, null);
+        }
         if (!(steelRoll.getSteelRollState().equals(REDEEMED) || steelRoll.getSteelRollState().equals(NOT_MORTGAGED))) {
             return new GeneralMessage(500, "wrong state", false, null);
         }
-        Date now = new Date(0);
         Date date = new Date();
         depositReceipt.setMorgageDays(mortgageDays);
         depositReceipt.setCreatedAt(date);
         depositReceipt.setInEffect(false);
         depositReceipt.setSteelRoll(steelRoll);
         depositReceipt.setReceiptState(UNFINISHED);
-        depositReceipt.setStartAt(now);
         steelRoll.setSteelRollState(TO_BE_MORTGAGED);
         steelRoll.setMovable(false);
         try {
@@ -62,6 +64,9 @@ public class DepositServiceServiceImplement implements DepositService {
 
     public GeneralMessage effectDeposit(Integer receiptId) {
         DepositReceipt depositReceipt = depositReceiptRepostitory.findByReceiptId(receiptId);
+        if(depositReceipt == null || !depositReceipt.getReceiptState().equals(UNFINISHED)){
+            return new GeneralMessage(500, "wrong deposit receipt", false, null);
+        }
         depositReceipt.setReceiptState(IN_EFFECT);
         SteelRoll steelRoll = depositReceipt.getSteelRoll();
         steelRoll.setSteelRollState(MORTGAGED);

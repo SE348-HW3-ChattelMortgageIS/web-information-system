@@ -128,7 +128,7 @@ public class initDate {
     RegisterRequest request = new RegisterRequest();
     request.setType(UserType.CUSTOMER);
     request.setPhone("13288230012");
-    request.setUsername("宝宝刚集团");
+    request.setUsername("customer");
     request.setPassword("bbg123123");
     return (UserEntity) this.accountService.register(request).getEntity();
   }
@@ -137,7 +137,7 @@ public class initDate {
     RegisterRequest request = new RegisterRequest();
     request.setType(UserType.BANK);
     request.setPhone("13288230011");
-    request.setUsername("花花旗集团");
+    request.setUsername("bank");
     request.setPassword("hhq123123");
     return (UserEntity) this.accountService.register(request).getEntity();
   }
