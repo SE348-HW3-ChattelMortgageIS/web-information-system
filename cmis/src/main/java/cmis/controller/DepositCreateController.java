@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping()
 @CrossOrigin("*")
 public class DepositCreateController {
     @Autowired
@@ -21,4 +20,6 @@ public class DepositCreateController {
         Integer mortgageDays = new Integer(httpServletRequest.getParameter("mortgagedays"));
         return this.depositService.createDeposit(steelRollId,mortgageDays);
     }
+
+
 }

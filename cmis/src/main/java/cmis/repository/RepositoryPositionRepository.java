@@ -10,5 +10,5 @@ import java.util.List;
 public interface RepositoryPositionRepository extends JpaRepository<RepositoryPosition, Integer> {
     List<RepositoryPosition> findAll();
      RepositoryPosition findByPositionId(int id);
-
+     RepositoryPosition findByInUseFalse();
 }
