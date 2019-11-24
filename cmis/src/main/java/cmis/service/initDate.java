@@ -132,6 +132,7 @@ public class initDate {
     request.setPhone("13288230012");
     request.setUsername("customer");
     request.setPassword("bbg123123");
+    //System.out.println("OK Here!");
     return (UserEntity) this.accountService.register(request).getEntity();
   }
 
