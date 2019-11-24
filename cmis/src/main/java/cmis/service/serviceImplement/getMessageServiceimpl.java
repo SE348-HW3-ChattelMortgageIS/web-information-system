@@ -18,6 +18,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 @Service
@@ -34,6 +35,10 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
     private Double humidity;
 
     private Date timestamp;
+
+    private static final int TEMP_COUNT = 50;
+
+    private static ArrayList<TemperatureInfo> tempList = new ArrayList<>();
 
     @Autowired
     public void initmessageClient()
@@ -77,6 +82,9 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
                     JSONObject value =(JSONObject)Data.get("value");
                     Temperature = value.getDouble("Temperature");
                     humidity = value.getDouble("humidity");
+                    if (value != null) {
+                        addTempToList(Temperature, humidity, timestamp);
+                    }
                     status = value.getString("status");
                 }catch (JSONException err){
                     System.out.print("error");
@@ -97,6 +105,17 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
 
     @Override
     public GeneralMessage getTemperature() {
-        return new GeneralMessage(1, status, true,new TemperatureInfo(Temperature,humidity,timestamp));
+        return new GeneralMessage(1, status, true, tempList);
+    }
+
+    private void addTempToList(Double temperature, double humidity, Date time) {
+        if (tempList.size() < TEMP_COUNT) {
+            tempList.add(new TemperatureInfo(temperature, humidity, time));
+        }
+        else {
+            tempList.remove(0);
+            tempList.add(new TemperatureInfo(temperature, humidity, time));
+        }
+
     }
 }
