@@ -100,6 +100,7 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
         if(id == "4")
             return new GeneralMessage(1,"yes",true,null);
         return new GeneralMessage(1,"yes",true,null);
+    }
 
     @Override
     public GeneralMessage getTemperature() {
