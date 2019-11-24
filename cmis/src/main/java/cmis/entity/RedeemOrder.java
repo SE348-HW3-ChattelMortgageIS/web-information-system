@@ -21,9 +21,6 @@ public class RedeemOrder
   private DepositReceipt depositReceipt;
 
   @Column(nullable = false)
-  private Date paymentDeadline;
-
-  @Column(nullable = false)
   private Double dailyInterest;
 
   @Column(nullable = false)
@@ -31,6 +28,14 @@ public class RedeemOrder
 
   @Column(nullable = false)
   private Boolean payed;
+
+  private RedeemOrderState redeemOrderState;
+
+  public enum RedeemOrderState {
+    APPLYING,
+    COMPLETED,
+    PAID
+  }
 
   public Integer getOrderId() {
     return orderId;
@@ -48,12 +53,12 @@ public class RedeemOrder
     this.depositReceipt = depositReceipt;
   }
 
-  public Date getPaymentDeadline() {
-    return paymentDeadline;
+  public RedeemOrderState getRedeemOrderState() {
+    return redeemOrderState;
   }
 
-  public void setPaymentDeadline(Date paymentDeadline) {
-    this.paymentDeadline = paymentDeadline;
+  public void setRedeemOrderState(RedeemOrderState redeemOrderState) {
+    this.redeemOrderState = redeemOrderState;
   }
 
   public Double getDailyInterest() {

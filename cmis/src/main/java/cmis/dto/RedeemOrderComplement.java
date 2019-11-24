@@ -7,8 +7,6 @@ public class RedeemOrderComplement {
 
     private Integer orderId;
 
-    private Date paymentDeadline;
-
     private Double dailyInterest;
 
     private BigDecimal redeemPrice;
@@ -22,14 +20,6 @@ public class RedeemOrderComplement {
 
     public void setOrderId(Integer orderId) {
         this.orderId = orderId;
-    }
-
-    public Date getPaymentDeadline() {
-        return paymentDeadline;
-    }
-
-    public void setPaymentDeadline(Date paymentDeadline) {
-        this.paymentDeadline = paymentDeadline;
     }
 
     public Double getDailyInterest() {
