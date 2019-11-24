@@ -1,6 +1,9 @@
 package cmis.service.serviceImplement;
 
+
 import cmis.dto.GeneralMessage;
+import cmis.dto.TemperatureInfo;
+import cmis.service.TemperatureService;
 import cmis.service.getMessageService;
 import com.alibaba.fastjson.JSONException;
 import com.aliyun.openservices.iot.api.Profile;
@@ -10,17 +13,15 @@ import com.aliyun.openservices.iot.api.message.callback.ConnectionCallback;
 import com.aliyun.openservices.iot.api.message.callback.MessageCallback;
 import com.aliyun.openservices.iot.api.message.entity.Message;
 import com.aliyun.openservices.iot.api.message.entity.MessageToken;
+
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sun.rmi.runtime.Log;
 
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.Date;
 
 @Service
-public class getMessageServiceimpl implements getMessageService {
+public class getMessageServiceimpl implements getMessageService, TemperatureService {
 
     private MessageClient messageClient;
 
@@ -28,11 +29,17 @@ public class getMessageServiceimpl implements getMessageService {
 
     private String status;
 
+    private Double Temperature;
+
+    private Double humidity;
+
+    private Date timestamp;
+
     @Autowired
     public void initmessageClient()
     {
-        String accessKey = "";
-        String accessSecret = "";
+        String accessKey = "LTAI4FiEEZF93DNiT6dfcwwL";
+        String accessSecret = "RiPCaGOfIzxRGPE2ql4eqDl1LpQSnK";
         String regionId = "cn-shanghai";
         String uid = "1591662154888233";
         String endPoint = "https://" + uid + ".iot-as-http2." + regionId + ".aliyuncs.com";
@@ -66,8 +73,11 @@ public class getMessageServiceimpl implements getMessageService {
                     JSONObject jsonObject = new JSONObject(receive);
                     JSONObject items =(JSONObject)jsonObject.get("items");
                     JSONObject Data =(JSONObject)items.get("Data");
-                    status = Data.getString("value");
-                    System.out.print(status);
+                    timestamp = new Date(Data.getLong("time"));
+                    JSONObject value =(JSONObject)Data.get("value");
+                    Temperature = value.getDouble("Temperature");
+                    humidity = value.getDouble("humidity");
+                    status = value.getString("status");
                 }catch (JSONException err){
                     System.out.print("error");
                 }
@@ -84,10 +94,15 @@ public class getMessageServiceimpl implements getMessageService {
     public GeneralMessage getStatus(String id) {
         return new GeneralMessage(1, status, true,null);
     }
+  
     @Override
     public  GeneralMessage testStatus(String id){
         if(id == "4")
             return new GeneralMessage(1,"yes",true,null);
         return new GeneralMessage(1,"yes",true,null);
+
+    @Override
+    public GeneralMessage getTemperature() {
+        return new GeneralMessage(1, status, true,new TemperatureInfo(Temperature,humidity,timestamp));
     }
 }

@@ -4,6 +4,7 @@ import cmis.dto.GeneralMessage;
 import cmis.entity.RepositoryPosition;
 import cmis.repository.RepositoryPositionRepository;
 import cmis.service.RepositoryService;
+import cmis.service.getMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ public class RepositoryServiceImplement implements RepositoryService {
     @Autowired
     private RepositoryPositionRepository repositoryPositionRepository;
 
+
     public GeneralMessage lookRepositoryMessage(){
         try {
             List<RepositoryPosition> listRepo = repositoryPositionRepository.findAll();
@@ -21,7 +23,5 @@ public class RepositoryServiceImplement implements RepositoryService {
         } catch (Exception e) {
             return new GeneralMessage(500, e.getMessage(), false, null);
         }
-
     }
-
 }

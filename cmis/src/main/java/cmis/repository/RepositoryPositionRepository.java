@@ -20,5 +20,4 @@ public interface RepositoryPositionRepository extends JpaRepository<RepositoryPo
     @Query(value = "update  repository_position set in_use = false where position_id= ?1",nativeQuery = true)
     int notUse(int id);
     List<RepositoryPosition> findByInUseFalse();
-
 }
