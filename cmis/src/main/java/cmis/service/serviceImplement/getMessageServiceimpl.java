@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 @Service
@@ -28,7 +29,7 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
 
     private MessageCallback messageCallback;
 
-    private String status;
+    private String[] status=new String[100];
 
     private Double Temperature;
 
@@ -43,6 +44,7 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
     @Autowired
     public void initmessageClient()
     {
+        Arrays.fill(status,"yes");
         String accessKey = "LTAI4FiEEZF93DNiT6dfcwwL";
         String accessSecret = "RiPCaGOfIzxRGPE2ql4eqDl1LpQSnK";
         String regionId = "cn-shanghai";
@@ -85,7 +87,8 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
                     if (value != null) {
                         addTempToList(Temperature, humidity, timestamp);
                     }
-                    status = value.getString("status");
+                    String temp = value.getString("status");
+                    status[Integer.parseInt(temp)] = "no";
                 }catch (JSONException err){
                     System.out.print("error");
                 }
@@ -100,7 +103,7 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
 
     @Override
     public GeneralMessage getStatus(String id) {
-        return new GeneralMessage(1, status, true,null);
+        return new GeneralMessage(1, status[Integer.parseInt(id)], true,null);
     }
   
     @Override
@@ -112,7 +115,7 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
 
     @Override
     public GeneralMessage getTemperature() {
-        return new GeneralMessage(1, status, true, tempList);
+        return new GeneralMessage(1, "yes", true, tempList);
     }
 
     private void addTempToList(Double temperature, double humidity, Date time) {
