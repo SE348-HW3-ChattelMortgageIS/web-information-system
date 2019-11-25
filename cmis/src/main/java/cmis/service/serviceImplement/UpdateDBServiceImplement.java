@@ -4,6 +4,7 @@ import cmis.dto.GeneralMessage;
 import cmis.entity.DepositReceipt;
 import cmis.entity.ExceptionAlarm;
 import cmis.entity.SteelRoll;
+import cmis.entity.SteelRoll.SteelRollState;
 import cmis.repository.DepositReceiptRepostitory;
 import cmis.repository.ExceptionAlarmRepository;
 import cmis.repository.SteelRollRepository;
@@ -58,8 +59,8 @@ public class UpdateDBServiceImplement implements UpdateService {
     public GeneralMessage generateAlarm(String id){
         SteelRoll steelRoll = steelRollRepository.findBySteelRollId(Integer.parseInt(id));
         if(steelRoll == null)
-            return new GeneralMessage(500,"not find the steelroll",false,null);
-        if(steelRoll.getMovable())
+            return new GeneralMessage(404,"not find the steelroll",false,null);
+       if(steelRoll.getSteelRollState() != SteelRollState.MORTGAGED)
             return new GeneralMessage(200,"the steelroll is movable",true,null);
         GeneralMessage message =  getMessageService1.testStatus(Integer.toString(steelRoll.getSteelRollId()));
         String flag = message.getMessage();
