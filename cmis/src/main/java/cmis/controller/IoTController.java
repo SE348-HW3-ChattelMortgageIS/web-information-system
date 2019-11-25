@@ -1,8 +1,8 @@
 package cmis.controller;
 
 import cmis.dto.GeneralMessage;
-import cmis.service.serviceImplement.LocalDBTemperatureServiceImpl;
-import org.omg.PortableInterceptor.LOCATION_FORWARD;
+import cmis.service.TemperatureService;
+//import cmis.service.serviceImplement.LocalDBTemperatureServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ public class IoTController {
      * TODO: replaced by IoT interface
      */
     @Autowired
-    private LocalDBTemperatureServiceImpl temperatureService;
+    private TemperatureService temperatureService;
 
     @GetMapping("/temp")
     public GeneralMessage getTemperature() {

@@ -5,6 +5,7 @@ import cmis.entity.ExceptionAlarm;
 import cmis.entity.ExceptionAlarm.AlarmState;
 import cmis.repository.ExceptionAlarmRepository;
 import cmis.service.AlarmService;
+import cmis.service.UpdateService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,8 +14,11 @@ import org.springframework.stereotype.Service;
 public class AlarmServiceImplement implements AlarmService {
   @Autowired
   private ExceptionAlarmRepository exceptionAlarmRepository;
+  @Autowired
+  private UpdateService updateService;
 
   public GeneralMessage getAlarm() {
+    updateService.update();
     List<ExceptionAlarm> alarms = this.exceptionAlarmRepository.findAll();
     return new GeneralMessage(200, "ok", true, alarms);
   }

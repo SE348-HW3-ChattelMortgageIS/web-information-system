@@ -10,6 +10,7 @@ import cmis.repository.DepositReceiptRepostitory;
 import cmis.repository.RedeemOrderRepository;
 import cmis.repository.SteelRollRepository;
 import cmis.service.RedeemOrderService;
+import cmis.service.UpdateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,9 @@ public class RedeemOrderServiceImplement implements RedeemOrderService {
 
     @Autowired
     private SteelRollRepository steelRollRepository;
+
+    @Autowired
+    private UpdateService updateService;
 
     @Override
     public GeneralMessage createRedeemOrder(RedeemOrderCreateRequest orderCreateRequest) {
@@ -78,6 +82,7 @@ public class RedeemOrderServiceImplement implements RedeemOrderService {
         RedeemOrder redeemOrder;
 
         try {
+            updateService.update();
             redeemOrder = redeemOrderRepository.findById(orderId).get();
         } catch (Exception e) {
             e.printStackTrace();
@@ -89,6 +94,7 @@ public class RedeemOrderServiceImplement implements RedeemOrderService {
     @Override
     public GeneralMessage getAllRedeemOrders() {
         try {
+            updateService.update();
             return new GeneralMessage(200, "OK", true, redeemOrderRepository.findAll());
         }
         catch (Exception e) {

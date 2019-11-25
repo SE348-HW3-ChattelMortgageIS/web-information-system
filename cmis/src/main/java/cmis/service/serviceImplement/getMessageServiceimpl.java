@@ -18,6 +18,8 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 @Service
@@ -27,7 +29,7 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
 
     private MessageCallback messageCallback;
 
-    private String status;
+    private String[] status=new String[400];
 
     private Double Temperature;
 
@@ -35,11 +37,16 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
 
     private Date timestamp;
 
+    private static final int TEMP_COUNT = 50;
+
+    private static ArrayList<TemperatureInfo> tempList = new ArrayList<>();
+
     @Autowired
     public void initmessageClient()
     {
-        String accessKey = "";
-        String accessSecret = "";
+        Arrays.fill(status,"yes");
+        String accessKey = "LTAI4FiEEZF93DNiT6dfcwwL";
+        String accessSecret = "RiPCaGOfIzxRGPE2ql4eqDl1LpQSnK";
         String regionId = "cn-shanghai";
         String uid = "1591662154888233";
         String endPoint = "https://" + uid + ".iot-as-http2." + regionId + ".aliyuncs.com";
@@ -77,7 +84,20 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
                     JSONObject value =(JSONObject)Data.get("value");
                     Temperature = value.getDouble("Temperature");
                     humidity = value.getDouble("humidity");
-                    status = value.getString("status");
+                    if (value != null) {
+                        addTempToList(Temperature, humidity, timestamp);
+                    }
+                    String temp = value.getString("status");
+
+                    if(Integer.parseInt(temp)!=-1)
+                    {
+                        if(Integer.parseInt(temp)>=0&&Integer.parseInt(temp)<400)
+                        {
+                            status[Integer.parseInt(temp)] = "no";
+                        }
+                    }
+                    
+
                 }catch (JSONException err){
                     System.out.print("error");
                 }
@@ -92,7 +112,8 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
 
     @Override
     public GeneralMessage getStatus(String id) {
-        return new GeneralMessage(1, status, true,null);
+        System.out.println("===================================" + status[Integer.parseInt(id)]);
+        return new GeneralMessage(1, status[Integer.parseInt(id)], true,null);
     }
   
     @Override
@@ -100,9 +121,21 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
         if(id == "4")
             return new GeneralMessage(1,"yes",true,null);
         return new GeneralMessage(1,"yes",true,null);
+    }
 
     @Override
     public GeneralMessage getTemperature() {
-        return new GeneralMessage(1, status, true,new TemperatureInfo(Temperature,humidity,timestamp));
+        return new GeneralMessage(1, "yes", true, tempList);
+    }
+
+    private void addTempToList(Double temperature, double humidity, Date time) {
+        if (tempList.size() < TEMP_COUNT) {
+            tempList.add(new TemperatureInfo(temperature, humidity, time));
+        }
+        else {
+            tempList.remove(0);
+            tempList.add(new TemperatureInfo(temperature, humidity, time));
+        }
+
     }
 }

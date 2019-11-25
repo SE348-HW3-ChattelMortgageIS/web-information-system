@@ -30,7 +30,7 @@ public class UpdateDBServiceImplement implements UpdateService {
         for(int i=0;i<steelRolls.size();i++){
             GeneralMessage message =  getMessageService1.getStatus(Integer.toString(steelRolls.get(i).getSteelRollId()));
             String flag = message.getMessage();
-            if(flag != "no"){
+            if(!flag.equals("no")){
                 DepositReceipt depositReceipt = depositReceiptRepostitory.findBySteelRoll(steelRolls.get(i));
                 int a = steelRollRepository.abnormal(steelRolls.get(i).getSteelRollId());
                 int b= depositReceiptRepostitory.abnormal(depositReceipt.getReceiptId());
