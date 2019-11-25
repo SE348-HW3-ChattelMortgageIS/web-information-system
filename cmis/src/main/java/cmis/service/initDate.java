@@ -53,16 +53,18 @@ public class initDate {
       roll.setPrice(BigDecimal.valueOf(81234.23));
       roll.setPosition(position);
       roll.setRemark("nothing");
-      if (j < 30 && j % 6 == 1) {
+      if (j < 50 && j % 6 == 1) {
         roll.setSteelRollState(SteelRollState.TO_BE_MORTGAGED);
-      } else if (j < 30 && j % 6 == 2) {
+      } else if (j < 50 && j % 6 == 2) {
         roll.setSteelRollState(SteelRollState.MORTGAGED);
-      } else if (j < 30 && j % 6 == 3) {
+      } else if (j < 50 && j % 6 == 3) {
         roll.setSteelRollState(SteelRollState.TO_BE_REDEEMED);
-      } else if (j < 30 && j % 6 == 4) {
+      } else if (j < 50 && j % 6 == 4) {
         roll.setSteelRollState(SteelRollState.REDEEMED);
-      } else if (j < 30 && j % 6 == 5) {
+      } else if (j < 50 && j % 6 == 5) {
         roll.setSteelRollState(SteelRollState.ABNORMAL);
+      } else if (j < 70) {
+        roll.setSteelRollState(SteelRollState.MORTGAGED);
       } else {
         roll.setSteelRollState(SteelRollState.NOT_MORTGAGED);
       }
