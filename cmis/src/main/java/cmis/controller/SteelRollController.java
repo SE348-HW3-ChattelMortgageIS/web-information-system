@@ -58,6 +58,11 @@ public class SteelRollController {
         String remark = createSteelRollRequest.getRemark();
         return this.steelRollService.create(price,remark,principal);
     }
+    @RequestMapping(value = "/generateAlarm", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    GeneralMessage generateAlarm(String id) {
+        return updateService.generateAlarm(id);
+    }
     @RequestMapping(value = "/test", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     @ResponseBody
     GeneralMessage test(String id) {
