@@ -10,6 +10,7 @@ import cmis.repository.RepositoryPositionRepository;
 import cmis.repository.SteelRollRepository;
 import cmis.repository.UserEntityRepository;
 import cmis.service.DepositService;
+import cmis.service.UpdateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
@@ -34,7 +35,7 @@ public class DepositServiceServiceImplement implements DepositService {
     private SteelRollRepository steelRollRepository;
 
     @Autowired
-    private UserEntityRepository userEntityRepository;
+    private UpdateService updateService;
 
     public GeneralMessage createDeposit(Integer steelRollId, Integer mortgageDays) {
         DepositReceipt depositReceipt = new DepositReceipt();
@@ -84,6 +85,7 @@ public class DepositServiceServiceImplement implements DepositService {
 
     public GeneralMessage depositMessage() {
         try {
+            updateService.update();
             List<DepositReceipt> listDeposit = depositReceiptRepostitory.findAll();
             return new GeneralMessage(200, "get deposit receipt message", true, listDeposit);
         } catch (Exception e) {
