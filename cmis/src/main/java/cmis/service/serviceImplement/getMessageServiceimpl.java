@@ -89,6 +89,8 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
                     }
                     String temp = value.getString("status");
                     status[Integer.parseInt(temp)] = "no";
+                    System.out.println("===================================" + status[Integer.parseInt(temp)]);
+                    System.out.println("===================================" + temp);
                 }catch (JSONException err){
                     System.out.print("error");
                 }
@@ -103,6 +105,7 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
 
     @Override
     public GeneralMessage getStatus(String id) {
+        System.out.println("===================================" + status[Integer.parseInt(id)]);
         return new GeneralMessage(1, status[Integer.parseInt(id)], true,null);
     }
   
