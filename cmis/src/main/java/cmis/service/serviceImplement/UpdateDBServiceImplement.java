@@ -54,4 +54,36 @@ public class UpdateDBServiceImplement implements UpdateService {
         }
         return true;
     }
+    @Override
+    public GeneralMessage generateAlarm(String id){
+        SteelRoll steelRoll = steelRollRepository.findBySteelRollId(Integer.parseInt(id));
+        if(steelRoll == null)
+            return new GeneralMessage(500,"not find the steelroll",false,null);
+        if(steelRoll.getMovable())
+            return new GeneralMessage(200,"the steelroll is movable",true,null);
+        GeneralMessage message =  getMessageService1.testStatus(Integer.toString(steelRoll.getSteelRollId()));
+        String flag = message.getMessage();
+        if(flag != "no"){
+            DepositReceipt depositReceipt = depositReceiptRepostitory.findBySteelRoll(steelRoll);
+            if(depositReceipt == null){
+                return new GeneralMessage(500,"not find the matched depositReceipt",true,null);
+            }
+            int a = steelRollRepository.abnormal(steelRoll.getSteelRollId());
+            int b= depositReceiptRepostitory.abnormal(depositReceipt.getReceiptId());
+            ExceptionAlarm exceptionAlarm = exceptionAlarmRepository.findByDepositReceipt(depositReceipt);
+            if(exceptionAlarm == null){
+                ExceptionAlarm new_alarm = new ExceptionAlarm();
+                new_alarm.setStartAt(new Date());
+                new_alarm.setAlarmType(ExceptionAlarm.AlarmType.STEEL_ALARM);
+                new_alarm.setAlarmState(ExceptionAlarm.AlarmState.UNREAD);
+                new_alarm.setDepositReceipt(depositReceipt);
+                exceptionAlarmRepository.save(new_alarm);
+            }
+            else{
+                exceptionAlarmRepository.updateTime(exceptionAlarm.getAlarmId(),new Date());
+            }
+        }
+        return new GeneralMessage(200,"generate alarm succeed!",true,null);
+    }
+
 }
