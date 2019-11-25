@@ -8,6 +8,7 @@ import cmis.repository.RepositoryPositionRepository;
 import cmis.repository.SteelRollRepository;
 import cmis.repository.UserEntityRepository;
 import cmis.service.SteelRollService;
+import cmis.service.UpdateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,10 @@ public class SteelRollServiceImplement implements SteelRollService {
     private UserEntityRepository userEntityRepository;
     @Autowired
     private RepositoryPositionRepository repositoryPositionRepository;
+    @Autowired
+    private UpdateService updateService;
     public List<SteelRoll> queryAllSteelRoll(){
+        updateService.update();
         return steelRollEntityRepository.findAll();
     }
     public GeneralMessage delete(int id){
