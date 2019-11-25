@@ -70,7 +70,7 @@ public class initDate {
           || roll.getSteelRollState() == SteelRollState.REDEEMED) {
         roll.setMovable(true);
       } else {
-        roll.setMovable(true);
+        roll.setMovable(false);
       }
       roll = this.steelRollRepository.save(roll);
       if (roll.getSteelRollState() == SteelRollState.NOT_MORTGAGED) {
