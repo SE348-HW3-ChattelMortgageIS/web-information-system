@@ -123,7 +123,7 @@ public class CmisApplicationTests {
           } else {
             redeemOrder.setPayed(true);
           }
-          redeemOrder.setPaymentDeadline(new Date());
+
           redeemOrder.setRedeemPrice(BigDecimal.valueOf(10092.312));
           this.redeemOrderRepository.save(redeemOrder);
         }

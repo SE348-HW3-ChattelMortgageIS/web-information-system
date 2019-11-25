@@ -29,6 +29,15 @@ public class SteelRollServiceImplement implements SteelRollService {
         return steelRollEntityRepository.findAll();
     }
     public GeneralMessage delete(int id){
+        // find the id ;
+        SteelRoll steelRoll = steelRollEntityRepository.findBySteelRollId(id);
+        // not find the stteroll return false.
+        if(steelRoll == null){
+            return new GeneralMessage(500,"delete failed",false,null);
+        }
+        // now the steelroll not in use.
+        repositoryPositionRepository.notUse(steelRoll.getPosition().getPositionId());
+        // delete the steelroll in db.
         if(steelRollEntityRepository.deleteSteelRoll(id) != 0){
             return new GeneralMessage(200, "delete", true, null);
         }
@@ -43,7 +52,15 @@ public class SteelRollServiceImplement implements SteelRollService {
     public GeneralMessage create(BigDecimal price, String remark, User principal){
         String username = principal.getUsername();
         UserEntity userEntity = userEntityRepository.findByUsername(username);
-        RepositoryPosition repositoryPosition = repositoryPositionRepository.findByPositionId(1);
+        // get the avaiable position.
+        List<RepositoryPosition> repositoryPositions = repositoryPositionRepository.findByInUseFalse();
+        // not find
+        if(repositoryPositions.size() == 0){
+            return new GeneralMessage(500,"repositoryPosition all in use",false,null);
+        }
+        RepositoryPosition repositoryPosition = repositoryPositions.get(0);
+        // save the new steelroll.
+        repositoryPositionRepository.inUse(repositoryPosition.getPositionId());
         int userId = userEntity.getUserId();
         SteelRoll steelRoll = new SteelRoll();
         steelRoll.setBelongTo(userEntity);

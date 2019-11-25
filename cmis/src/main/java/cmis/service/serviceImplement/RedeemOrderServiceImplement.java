@@ -36,7 +36,7 @@ public class RedeemOrderServiceImplement implements RedeemOrderService {
 
         newRedeemOrder.setDailyInterest(0.0);
         newRedeemOrder.setRedeemPrice(new BigDecimal(0));
-        newRedeemOrder.setPaymentDeadline(new Date());
+        newRedeemOrder.setRedeemOrderState(RedeemOrder.RedeemOrderState.APPLYING);
 
 
         // check deposit not null
@@ -104,6 +104,7 @@ public class RedeemOrderServiceImplement implements RedeemOrderService {
             return new GeneralMessage(500, "order not found", false, null);
         }
         RedeemOrder redeemOrder = redeemOrderRepository.findById(orderId).get();
+        redeemOrder.setRedeemOrderState(RedeemOrder.RedeemOrderState.PAID);
 
         // set order state to payed
         redeemOrder.setPayed(true);
@@ -142,9 +143,9 @@ public class RedeemOrderServiceImplement implements RedeemOrderService {
         }
         RedeemOrder redeemOrder = redeemOrderRepository.findById(redeemOrderComplement.getOrderId()).get();
 
-        redeemOrder.setPaymentDeadline(redeemOrderComplement.getPaymentDeadline());
         redeemOrder.setDailyInterest(redeemOrderComplement.getDailyInterest());
         redeemOrder.setRedeemPrice(redeemOrderComplement.getRedeemPrice());
+        redeemOrder.setRedeemOrderState(RedeemOrder.RedeemOrderState.COMPLETED);
 
         try {
             redeemOrderRepository.save(redeemOrder);
