@@ -29,7 +29,7 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
 
     private MessageCallback messageCallback;
 
-    private String[] status=new String[100];
+    private String[] status=new String[400];
 
     private Double Temperature;
 
@@ -88,7 +88,13 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
                         addTempToList(Temperature, humidity, timestamp);
                     }
                     String temp = value.getString("status");
-                    status[Integer.parseInt(temp)] = "no";
+                    if(Integer.parseInt(temp)!=-1)
+                    {
+                        if(Integer.parseInt(temp)>=0&&Integer.parseInt(temp)<400)
+                        {
+                            status[Integer.parseInt(temp)] = "no";
+                        }
+                    }
                 }catch (JSONException err){
                     System.out.print("error");
                 }
