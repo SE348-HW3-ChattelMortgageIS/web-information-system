@@ -28,4 +28,6 @@ HELP.md
 ### VS Code ###
 .vscode/
 
-application.properties
+/src/main/resources/application.properties
+/src/main/java/cmis/service/initDate.java
+/src/main/java/cmis/controller/AccountController.java

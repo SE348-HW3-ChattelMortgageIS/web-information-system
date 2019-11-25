@@ -30,7 +30,7 @@ public class AccountController {
 
   @RequestMapping(value = "/init", method = RequestMethod.GET)
   @ResponseBody
-  public String init(@RequestBody RegisterRequest request) {
+  public String init() {
     return this.init.fillTestData();
   }
 }

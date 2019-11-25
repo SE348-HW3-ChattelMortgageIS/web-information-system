@@ -101,10 +101,12 @@ public class initDate {
           redeemOrder.setDepositReceipt(receipt);
           if (receipt.getReceiptState() == DepositReceiptState.REDEEMING) {
             redeemOrder.setPayed(false);
+            redeemOrder.setRedeemOrderState(RedeemOrder.RedeemOrderState.COMPLETED);
           } else {
             redeemOrder.setPayed(true);
+            redeemOrder.setRedeemOrderState(RedeemOrder.RedeemOrderState.PAID);
           }
-          redeemOrder.setPaymentDeadline(new Date());
+
           redeemOrder.setRedeemPrice(BigDecimal.valueOf(10092.312));
           this.redeemOrderRepository.save(redeemOrder);
         }
@@ -128,7 +130,7 @@ public class initDate {
     RegisterRequest request = new RegisterRequest();
     request.setType(UserType.CUSTOMER);
     request.setPhone("13288230012");
-    request.setUsername("宝宝刚集团");
+    request.setUsername("customer");
     request.setPassword("bbg123123");
     //System.out.println("OK Here!");
     return (UserEntity) this.accountService.register(request).getEntity();
@@ -138,7 +140,7 @@ public class initDate {
     RegisterRequest request = new RegisterRequest();
     request.setType(UserType.BANK);
     request.setPhone("13288230011");
-    request.setUsername("花花旗集团");
+    request.setUsername("bank");
     request.setPassword("hhq123123");
     return (UserEntity) this.accountService.register(request).getEntity();
   }
