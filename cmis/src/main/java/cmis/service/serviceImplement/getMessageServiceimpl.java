@@ -88,6 +88,7 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
                         addTempToList(Temperature, humidity, timestamp);
                     }
                     String temp = value.getString("status");
+
                     if(Integer.parseInt(temp)!=-1)
                     {
                         if(Integer.parseInt(temp)>=0&&Integer.parseInt(temp)<400)
@@ -95,6 +96,8 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
                             status[Integer.parseInt(temp)] = "no";
                         }
                     }
+                    
+
                 }catch (JSONException err){
                     System.out.print("error");
                 }
@@ -109,6 +112,7 @@ public class getMessageServiceimpl implements getMessageService, TemperatureServ
 
     @Override
     public GeneralMessage getStatus(String id) {
+        System.out.println("===================================" + status[Integer.parseInt(id)]);
         return new GeneralMessage(1, status[Integer.parseInt(id)], true,null);
     }
   
